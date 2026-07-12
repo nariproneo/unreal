@@ -8,6 +8,12 @@ import {
 } from "react";
 import Image from "next/image";
 import { areas, articles, type Area, type Article } from "@/content/articles";
+import {
+  ALL_TAG,
+  filterArticlesByArea,
+  filterArticlesByTags,
+  getAvailableTags,
+} from "@/features/articles/article-filters";
 
 const INITIAL_VISIBLE_COUNT = 10;
 
@@ -90,25 +96,27 @@ function ArticleCard({ article, isPressed, onPress, onClick }: ArticleCardProps)
   );
 }
 
-export function ArticleExplorer() {
-  const [selectedArea, setSelectedArea] = useState<Area>("全国");
+type ArticleExplorerProps = {
+  selectedArea: Area;
+  selectedTags: string[];
+};
+
+export function ArticleExplorer({ selectedArea, selectedTags }: ArticleExplorerProps) {
   const [visibleCount, setVisibleCount] = useState(INITIAL_VISIBLE_COUNT);
   const [pressedArticleId, setPressedArticleId] = useState<string | null>(null);
   const hasPendingArticleNavigation = useRef(false);
 
-  const filteredArticles = useMemo(
-    () =>
-      selectedArea === "全国"
-        ? articles
-        : articles.filter((article) => article.area === selectedArea),
+  const areaArticles = useMemo(
+    () => filterArticlesByArea(articles, selectedArea),
     [selectedArea],
   );
+  const availableTags = useMemo(() => getAvailableTags(areaArticles), [areaArticles]);
+  const activeTags = selectedTags.filter((tag) => availableTags.includes(tag));
+  const filteredArticles = useMemo(
+    () => filterArticlesByTags(areaArticles, activeTags),
+    [areaArticles, activeTags],
+  );
   const visibleArticles = filteredArticles.slice(0, visibleCount);
-
-  function handleAreaSelect(area: Area) {
-    setSelectedArea(area);
-    setVisibleCount(INITIAL_VISIBLE_COUNT);
-  }
 
   function handleArticleClick(
     event: MouseEvent<HTMLAnchorElement>,
@@ -130,9 +138,9 @@ export function ArticleExplorer() {
         <div className="border-y border-white/10 py-4">
           <div className="mb-3 flex items-center justify-between px-6 sm:px-10 lg:px-0">
             <p className="text-[0.65rem] font-medium tracking-[0.2em] text-[#c5a35f]">
-              LATEST ARTICLES
+              極秘記事
             </p>
-            <p className="text-xs text-white/40">{filteredArticles.length} articles</p>
+            <p className="text-xs text-white/40">全{filteredArticles.length}件</p>
           </div>
           <div className="relative">
             <div className="no-scrollbar relative z-10 flex gap-2 overflow-x-auto px-6 pb-1 pr-14 sm:px-10 sm:pr-10 lg:px-0">
@@ -140,21 +148,21 @@ export function ArticleExplorer() {
                 const isSelected = selectedArea === area;
 
                 return (
-                  <button
-                    key={area}
-                    type="button"
+                  <form key={area} action="/" className="shrink-0">
+                    <button
+                    type="submit"
+                    name="area"
+                    value={area}
                     aria-pressed={isSelected}
-                    onPointerDown={() => handleAreaSelect(area)}
-                    onTouchStart={() => handleAreaSelect(area)}
-                    onClick={() => handleAreaSelect(area)}
-                    className={`relative z-30 shrink-0 touch-manipulation border px-4 py-2.5 text-sm transition active:scale-[0.98] ${
+                    className={`relative z-30 touch-manipulation border px-4 py-2.5 text-sm transition active:scale-[0.98] ${
                       isSelected
                         ? "border-[#c5a35f] bg-[#c5a35f] text-[#17130d]"
                         : "border-white/15 text-white/60 hover:border-[#c5a35f]/65 hover:text-white"
                     }`}
                   >
                     {area}
-                  </button>
+                    </button>
+                  </form>
                 );
               })}
             </div>
@@ -162,6 +170,48 @@ export function ArticleExplorer() {
               aria-hidden="true"
               className="pointer-events-none absolute inset-y-0 right-0 z-20 w-14 bg-gradient-to-l from-[#090909] via-[#090909]/90 to-transparent sm:hidden"
             />
+          </div>
+          <div className="mt-4 border-t border-white/10 pt-3">
+            <div className="relative">
+              <div className="no-scrollbar relative z-10 flex gap-2 overflow-x-auto px-6 pb-1 pr-14 sm:px-10 sm:pr-10 lg:px-0">
+                {[ALL_TAG, ...availableTags].map((tag) => {
+                  const isAllTag = tag === ALL_TAG;
+                  const isSelected = isAllTag
+                    ? activeTags.length === 0
+                    : activeTags.includes(tag);
+                  const nextTags = isAllTag
+                    ? []
+                    : isSelected
+                      ? activeTags.filter((activeTag) => activeTag !== tag)
+                      : [...activeTags, tag];
+
+                  return (
+                    <form key={tag} action="/" className="shrink-0">
+                      <input type="hidden" name="area" value={selectedArea} />
+                      {nextTags.map((nextTag) => (
+                        <input key={nextTag} type="hidden" name="tag" value={nextTag} />
+                      ))}
+                      <button
+                      type="submit"
+                      name={undefined}
+                      aria-pressed={isSelected}
+                      className={`relative z-30 shrink-0 touch-manipulation border px-3 py-2 text-xs transition active:scale-[0.98] ${
+                        isSelected
+                          ? "border-[#c5a35f] bg-[#c5a35f] text-[#17130d]"
+                          : "border-white/15 text-white/60 hover:border-[#c5a35f]/65 hover:text-white"
+                      }`}
+                    >
+                      {tag}
+                      </button>
+                    </form>
+                  );
+                })}
+              </div>
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-y-0 right-0 z-20 w-14 bg-gradient-to-l from-[#090909] via-[#090909]/90 to-transparent sm:hidden"
+              />
+            </div>
           </div>
         </div>
 
