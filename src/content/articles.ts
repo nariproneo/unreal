@@ -28,6 +28,19 @@ export type Article = {
 
 export const articles: Article[] = [
   {
+    id: "osaka-nihonbashi-free-hr-experience",
+    area: "大阪",
+    title: "【日本橋無課金HR】スぺ120の元キャバ嬢と無課金HR体験！！",
+    excerpt:
+      "今回は日本橋でスぺ120越えの元キャバ嬢が無課金でCKB舐め＋TKKからのGHRまでしてくれる神体験をしてきたので共有してきます！ぜひ最後まで読み進めてください！",
+    tags: ["HR", "綺麗系", "スレンダー"],
+    publishedAt: "2026-07-14",
+    regularPrice: 1500,
+    salePrice: 1000,
+    thumbnail: "/images/articles/osaka-nihonbashi-free-hr-experience.webp",
+    href: "https://codoc.jp/sites/OHIQksoN5w/entries/W5I7QMLxhw",
+  },
+  {
     id: "osaka-nn-h-cup-blonde-bob",
     area: "大阪",
     title: "【99％NN】乳の暴力。Hカップ20歳を鏡越しバックでハメたおし中だし極上体験！",
