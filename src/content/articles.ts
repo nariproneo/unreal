@@ -28,6 +28,19 @@ export type Article = {
 
 export const articles: Article[] = [
   {
+    id: "osaka-nn-second-round-g-cup",
+    area: "大阪",
+    title: "【大阪NN2回戦】「もう一回する？♡」G杯の激エ◯美女とNNできるバグ体験談！",
+    excerpt:
+      "まさか大阪でNN2回戦できるなんて…ハーフ系明るい巨乳美女が「もう1回しよ♡」って自分から求めてきてクッソエ◯いwww 今回はG杯のお目目くりくりアイドル系の美女と、NN2回戦も楽しんできました//",
+    tags: ["NN", "綺麗系", "大人系", "巨乳", "2回戦以上"],
+    publishedAt: "2026-07-14",
+    regularPrice: 1500,
+    salePrice: 1000,
+    thumbnail: "/images/articles/osaka-nn-second-round-g-cup.webp",
+    href: "https://codoc.jp/sites/OHIQksoN5w/entries/sqJLlzAhZg",
+  },
+  {
     id: "tokyo-shinjuku-nn-actress-g-cup",
     area: "東京",
     title: "【新宿NN】現役A◯女優G杯美女と濃厚NN体験！",
