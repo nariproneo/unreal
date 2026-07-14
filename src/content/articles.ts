@@ -28,6 +28,19 @@ export type Article = {
 
 export const articles: Article[] = [
   {
+    id: "osaka-nn-h-cup-blonde-bob",
+    area: "大阪",
+    title: "【99％NN】乳の暴力。Hカップ20歳を鏡越しバックでハメたおし中だし極上体験！",
+    excerpt:
+      "大阪で20歳H杯の爆乳金髪ボブに中◯ししてきました…もうこの1文だけで神回なのがわかると思いますwww 鏡を見ながらハタチのきっつきつのあそこをバックでハ◯ている時はどちゃくそ興奮しましたw",
+    tags: ["NN", "HR", "ギャル", "巨乳"],
+    publishedAt: "2026-07-14",
+    regularPrice: 1500,
+    salePrice: 1000,
+    thumbnail: "/images/articles/osaka-nn-h-cup-blonde-bob.webp",
+    href: "https://codoc.jp/sites/OHIQksoN5w/entries/YFGJTc1YMw",
+  },
+  {
     id: "tokyo-first-hr-actress-g-cup",
     area: "東京",
     title: "【初回HR】現役A◯女優G杯とHR！普段見れないモザイクの向こう側へ...",
