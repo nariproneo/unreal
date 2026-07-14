@@ -140,7 +140,7 @@ export const articles: Article[] = [
     tags: ["まとめ系", "NN", "NS", "HR", "スレンダー", "ギャル", "綺麗系", "巨乳", "大人系"],
     publishedAt: "2026-07-11",
     regularPrice: 3000,
-    salePrice: 1800,
+    salePrice: 1500,
     thumbnail: "/images/articles/osaka-premium-hr-therapist-list-5.webp",
     href: "https://codoc.jp/sites/OHIQksoN5w/entries/1E0Epp0Iog",
   },
