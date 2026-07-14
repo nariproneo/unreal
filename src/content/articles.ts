@@ -28,6 +28,19 @@ export type Article = {
 
 export const articles: Article[] = [
   {
+    id: "tokyo-first-hr-actress-g-cup",
+    area: "東京",
+    title: "【初回HR】現役A◯女優G杯とHR！普段見れないモザイクの向こう側へ...",
+    excerpt:
+      "当てはまったら買うべき。現役A◯女優との激エロHRをしたい人、低身長なのにG杯の天然爆乳を思う存分楽しみたい人、伝説のPZRを体験したい人におすすめです。",
+    tags: ["HR", "PZR", "巨乳", "有名人"],
+    publishedAt: "2026-07-14",
+    regularPrice: 1500,
+    salePrice: 1000,
+    thumbnail: "/images/articles/tokyo-first-hr-actress-g-cup.webp",
+    href: "https://codoc.jp/sites/OHIQksoN5w/entries/Zkj1lh6x7w",
+  },
+  {
     id: "osaka-nn-second-round-g-cup",
     area: "大阪",
     title: "【大阪NN2回戦】「もう一回する？♡」G杯の激エ◯美女とNNできるバグ体験談！",
