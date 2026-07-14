@@ -28,6 +28,19 @@ export type Article = {
 
 export const articles: Article[] = [
   {
+    id: "tokyo-shinjuku-nn-actress-g-cup",
+    area: "東京",
+    title: "【新宿NN】現役A◯女優G杯美女と濃厚NN体験！",
+    excerpt:
+      "今回も新宿のメンエスに行ってまいりました！タイトルからも伝わる通りA◯女優とNNという信じられない体験をしてきました！！いや、、、本当に凄かったです、、（笑）ぜひ最後まで読みすすめてみてください！",
+    tags: ["おすすめ", "NN", "NS", "HR", "綺麗系", "有名人"],
+    publishedAt: "2026-07-14",
+    regularPrice: 1500,
+    salePrice: 1000,
+    thumbnail: "/images/articles/tokyo-shinjuku-nn-actress-g-cup.webp",
+    href: "https://codoc.jp/sites/OHIQksoN5w/entries/uu5lZzc2mQ",
+  },
+  {
     id: "osaka-ns-white-gyaru-experience",
     area: "大阪",
     title: "【大阪NS】トップキャバ譲レベルの白ギャルを死ぬほど生チ◯ポでハ◯たおす極上体験！",
