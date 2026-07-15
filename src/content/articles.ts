@@ -28,6 +28,19 @@ export type Article = {
 
 export const articles: Article[] = [
   {
+    id: "tokyo-free-nn-e-cup-legal",
+    area: "東京",
+    title: "【無課金NN】ギリ合法口リの膣圧最強ピチピチマ◯コに大量NN！",
+    excerpt:
+      "もしJKのようにハリのあるピチピチま◯こに中◯しできるならしますよね？これ、合法でできますw 今回は20歳なりたてE杯、スぺ115の神スタイル合法口リマ◯コに無課金NNでたっぷり中◯ししてきました！ぜひ最後までお読みくださいませ。",
+    tags: ["NN", "HR"],
+    publishedAt: "2026-07-15",
+    regularPrice: 1500,
+    salePrice: 1000,
+    thumbnail: "/images/articles/tokyo-free-nn-e-cup-legal.webp",
+    href: "https://codoc.jp/sites/OHIQksoN5w/entries/EihERWLtDQ",
+  },
+  {
     id: "osaka-nihonbashi-free-hr-experience",
     area: "大阪",
     title: "【日本橋無課金HR】スぺ120の元キャバ嬢と無課金HR体験！！",
